@@ -1,0 +1,14 @@
+$main: #304357;
+$main-lt: #6DBCDB;
+$accent: #FF201D;
+$grey: rgba(243,243,243,1);
+
+
+html, body {
+	font-size: 10px;
+	background-color: $grey;
+}
+
+#app {
+	display: flex;
+}

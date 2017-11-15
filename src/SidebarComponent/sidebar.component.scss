@@ -1,0 +1,189 @@
+$main: #304357;
+$main-lt: #6DBCDB;
+$accent: #FF201D;
+$grey: #D7DADB;
+
+
+a {
+	text-decoration: none;
+}
+
+.sidebar {
+	width: 75px;
+	height: 100vh;
+	background-color: $main;
+	box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+	transition: width .4s ease;
+	position: relative;
+	z-index: 1000;
+	flex-shrink: 0;
+	&.expand {
+		width: 350px;
+		.side-navs {
+			.s-nav {
+				width: calc(100% - 25px);
+				justify-content: flex-start;
+				.s-btn {
+					max-width: 324px;
+					justify-content: flex-start;
+					padding: 0 0 0 13px;
+					.btn-icon {
+						flex: 0 0 24px;
+					}
+					.btn-label{
+						flex: 2 2 50px;
+						max-width: 250px;
+						opacity: 1;
+						padding: 0 13px;
+					}
+					.btn-drop {
+						flex: 0 0 50px;
+						max-width: 50px;
+						opacity: 1;
+						
+					}
+				}
+				.s-label {
+					display: none;
+				}
+			}
+			.toggle {
+				.toggle-btn {
+					justify-content: center;
+					padding: 0;
+				}
+				.nav-title {
+					opacity: 1;
+					max-width: 300px;
+					padding-left: 13px;
+				}
+				
+			}
+		}
+	}
+
+	.side-navs {
+		display: flex;
+		flex-direction: column;
+		height: 100vh;
+		.toggle {
+			transition: background-color .4s ease;
+			padding: 0 ;
+			margin: 0 0 10px 0;
+			width: 100%;
+			height: 75px;
+			width: 100%;
+			flex: 0 0 75px;
+			border-bottom: 2px solid lighten($main, 5);
+			display: flex;
+			cursor: pointer;
+			justify-content: flex-start;
+			align-items: center;
+
+			.toggle-btn {
+				box-shadow: none;
+				height: 75px;
+				max-width: 75px;
+				flex: 0 0 75px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				padding: 0;
+
+			}
+			.nav-title {
+				transition: opacity .3s ease, max-width .3s ease, padding .3s ease;
+				flex: 2 2 100px;
+				font-size: 2.5rem;
+				color: white;
+				padding: 0;
+				font-weight: bold;
+				opacity: 0;
+				max-width: 0;
+				overflow: hidden;
+			}
+			&:hover {
+				background-color: lighten($main, 10);
+			}
+		}
+		.s-nav {
+			flex: 0 0 50px;
+			height: 50px;
+			padding: 5px 12.5px;
+			margin: 5px 0;
+			display: flex;
+			align-items: center;
+			justify-content: flex-start;
+			overflow: hidden;
+			.s-btn {
+				transition: box-shadow .4s ease, background-color .4s ease, max-width .3s ease;
+				flex: 1 1 26px;
+				padding: 0 13px;
+				height: 50px;
+				border-radius: 4px;
+				box-shadow: 0 0 2px 2px rgba(20,20,20,.3);
+				cursor: pointer;
+				background-color: $main;
+				box-sizing: border-bottom;
+				display: flex;
+				align-items: center;
+				.btn-icon {
+					flex: 0 0 24px;
+				}
+				.btn-label{
+					transition: max-width .3s ease, opacity .3s ease, flex .3s ease, padding .3s ease;
+
+					flex: 2 2 50px;
+					max-width: 0;
+					opacity: 0;
+					color: white;
+					font-size: 1.6rem;
+					padding: 0;
+					overflow: hidden;
+					white-space: nowrap;
+				}
+				.btn-drop {
+					transition: max-width .25s ease, opacity .25s ease, flex .25s ease, border-left .25s ease, background-color .4s ease, max-width .25s ease;
+					border-left: none;
+					flex: 0 5 24px;
+					max-width: 0;
+					opacity: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					border-left: 2px solid lighten($main, 5);
+					height: 50px;
+					background-color: $main;
+					&:hover {
+						background-color: darken($main, 5);
+					}
+				}
+			}
+			.s-label {
+				transition: opacity .2s ease .05s;
+				position: absolute;
+				left: 85px;
+				padding: 5px 8px;
+				background-color: rgba(0,0,0, .7);
+				color: white;
+				font-size: 1.4rem;
+				border-radius: 12px;
+				opacity: 0;
+				visibility: hidden;
+				white-space: nowrap;
+			}
+			&:hover {
+				.s-btn {
+					box-shadow: 0 0 4px 3px rgba(20,20,20,.3);
+					background-color: lighten($main, 10);
+				}
+				.s-label {
+					opacity: 1;
+					visibility: visible;
+				}
+			}
+		}
+
+	}
+	
+}
