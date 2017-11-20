@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAKA,eAAgB;EACf,IAAI,EAAE,sBAAsB;EAC5B,uBAAQ;IACP,OAAO,EAAE,CAAC;IACV,SAAS,EAAE,IAAI;IACf,KAAK,EAVA,OAAO;IAWZ,WAAW,EAAE,IAAI;IACjB,MAAM,EAAE,IAAI;IACZ,gBAAgB,EAAE,KAAK;IACvB,OAAO,EAAE,IAAI;IACb,WAAW,EAAE,MAAM;IACnB,OAAO,EAAE,MAAM;IACf,aAAa,EAAE,IAAI;EAGpB,0BAAW;IACV,KAAK,EAAE,iBAAiB;IACxB,MAAM,EAAE,MAAM;IACd,SAAS,EAAE,MAAM",
-"sources": ["email-workspace.component.scss"],
+"mappings": "",
+"sources": [],
 "names": [],
 "file": "email-workspace.component.css"
 }

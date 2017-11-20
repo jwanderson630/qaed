@@ -13,7 +13,9 @@ class TableComponent extends Component {
 					{this.getTabs()}
 				</div>
 				<div className="t-content">
-					TABLE CONTENT
+					<table>
+						{this.makeTable()}
+					</table>
 				</div>
 			</div>
 		)
@@ -27,6 +29,35 @@ class TableComponent extends Component {
 				</Link>
 			);
 		});
+	}
+
+	makeTable() {
+		return (
+			<tbody>
+			<tr className="t-headers">
+				{this.props.data.headers.map((header) => {
+					return (
+						<td className="t-header">{header}</td>
+					)
+				})}
+			</tr>
+				{this.props.data.projects.map((project) => {
+					return (
+						<tr className="t-row">
+							{
+								this.props.data.headers.map((col) => {
+									return (
+										<td className="t-cell">
+											{project[col]}
+										</td>
+									)
+								})
+							}
+						</tr>
+					)
+				})}
+			</tbody>
+		)
 	}
 }
 

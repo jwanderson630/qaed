@@ -11,4 +11,7 @@ html, body {
 
 #app {
 	display: flex;
+	.main {
+		flex: 5 5 100%;
+	}
 }

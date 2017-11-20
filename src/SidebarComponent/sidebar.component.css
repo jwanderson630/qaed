@@ -1,7 +1,14 @@
 a {
   text-decoration: none; }
 
-.sidebar {
+.spacer {
+  transition: width .4s ease;
+  width: 75px;
+  height: 100%; }
+  .spacer.expand {
+    width: 350px; }
+
+#sidebar {
   width: 75px;
   height: 100vh;
   background-color: #304357;
@@ -9,41 +16,44 @@ a {
   transition: width .4s ease;
   position: relative;
   z-index: 1000;
-  flex-shrink: 0; }
-  .sidebar.expand {
+  flex-shrink: 0;
+  position: fixed;
+  left: 0;
+  top: 0; }
+  #sidebar.expand {
     width: 350px; }
-    .sidebar.expand .side-navs .s-nav {
+    #sidebar.expand .side-navs .s-nav {
       width: calc(100% - 25px);
       justify-content: flex-start; }
-      .sidebar.expand .side-navs .s-nav .s-btn {
+      #sidebar.expand .side-navs .s-nav .s-btn {
         max-width: 324px;
         justify-content: flex-start;
         padding: 0 0 0 13px; }
-        .sidebar.expand .side-navs .s-nav .s-btn .btn-icon {
+        #sidebar.expand .side-navs .s-nav .s-btn .btn-icon {
           flex: 0 0 24px; }
-        .sidebar.expand .side-navs .s-nav .s-btn .btn-label {
+        #sidebar.expand .side-navs .s-nav .s-btn .btn-label {
           flex: 2 2 50px;
           max-width: 250px;
           opacity: 1;
           padding: 0 13px; }
-        .sidebar.expand .side-navs .s-nav .s-btn .btn-drop {
+        #sidebar.expand .side-navs .s-nav .s-btn .btn-drop {
           flex: 0 0 50px;
           max-width: 50px;
           opacity: 1; }
-      .sidebar.expand .side-navs .s-nav .s-label {
+      #sidebar.expand .side-navs .s-nav .s-label {
         display: none; }
-    .sidebar.expand .side-navs .toggle .toggle-btn {
+    #sidebar.expand .side-navs .toggle .toggle-btn {
       justify-content: center;
       padding: 0; }
-    .sidebar.expand .side-navs .toggle .nav-title {
+    #sidebar.expand .side-navs .toggle .nav-title {
       opacity: 1;
       max-width: 300px;
       padding-left: 13px; }
-  .sidebar .side-navs {
+  #sidebar .side-navs {
     display: flex;
     flex-direction: column;
     height: 100vh; }
-    .sidebar .side-navs .toggle {
+    #sidebar .side-navs .toggle {
       transition: background-color .4s ease;
       padding: 0;
       margin: 0 0 10px 0;
@@ -56,7 +66,7 @@ a {
       cursor: pointer;
       justify-content: flex-start;
       align-items: center; }
-      .sidebar .side-navs .toggle .toggle-btn {
+      #sidebar .side-navs .toggle .toggle-btn {
         box-shadow: none;
         height: 75px;
         max-width: 75px;
@@ -65,7 +75,7 @@ a {
         align-items: center;
         justify-content: center;
         padding: 0; }
-      .sidebar .side-navs .toggle .nav-title {
+      #sidebar .side-navs .toggle .nav-title {
         transition: opacity .3s ease, max-width .3s ease, padding .3s ease;
         flex: 2 2 100px;
         font-size: 2.5rem;
@@ -75,9 +85,9 @@ a {
         opacity: 0;
         max-width: 0;
         overflow: hidden; }
-      .sidebar .side-navs .toggle:hover {
+      #sidebar .side-navs .toggle:hover {
         background-color: #425c78; }
-    .sidebar .side-navs .s-nav {
+    #sidebar .side-navs .s-nav {
       flex: 0 0 50px;
       height: 50px;
       padding: 5px 12.5px;
@@ -86,7 +96,7 @@ a {
       align-items: center;
       justify-content: flex-start;
       overflow: hidden; }
-      .sidebar .side-navs .s-nav .s-btn {
+      #sidebar .side-navs .s-nav .s-btn {
         transition: box-shadow .4s ease, background-color .4s ease, max-width .3s ease;
         flex: 1 1 26px;
         padding: 0 13px;
@@ -98,9 +108,9 @@ a {
         box-sizing: border-bottom;
         display: flex;
         align-items: center; }
-        .sidebar .side-navs .s-nav .s-btn .btn-icon {
+        #sidebar .side-navs .s-nav .s-btn .btn-icon {
           flex: 0 0 24px; }
-        .sidebar .side-navs .s-nav .s-btn .btn-label {
+        #sidebar .side-navs .s-nav .s-btn .btn-label {
           transition: max-width .3s ease, opacity .3s ease, flex .3s ease, padding .3s ease;
           flex: 2 2 50px;
           max-width: 0;
@@ -110,7 +120,7 @@ a {
           padding: 0;
           overflow: hidden;
           white-space: nowrap; }
-        .sidebar .side-navs .s-nav .s-btn .btn-drop {
+        #sidebar .side-navs .s-nav .s-btn .btn-drop {
           transition: max-width .25s ease, opacity .25s ease, flex .25s ease, border-left .25s ease, background-color .4s ease, max-width .25s ease;
           border-left: none;
           flex: 0 5 24px;
@@ -122,9 +132,9 @@ a {
           border-left: 2px solid #395067;
           height: 50px;
           background-color: #304357; }
-          .sidebar .side-navs .s-nav .s-btn .btn-drop:hover {
+          #sidebar .side-navs .s-nav .s-btn .btn-drop:hover {
             background-color: #273647; }
-      .sidebar .side-navs .s-nav .s-label {
+      #sidebar .side-navs .s-nav .s-label {
         transition: opacity .2s ease .05s;
         position: absolute;
         left: 85px;
@@ -136,10 +146,10 @@ a {
         opacity: 0;
         visibility: hidden;
         white-space: nowrap; }
-      .sidebar .side-navs .s-nav:hover .s-btn {
+      #sidebar .side-navs .s-nav:hover .s-btn {
         box-shadow: 0 0 4px 3px rgba(20, 20, 20, 0.3);
         background-color: #425c78; }
-      .sidebar .side-navs .s-nav:hover .s-label {
+      #sidebar .side-navs .s-nav:hover .s-label {
         opacity: 1;
         visibility: visible; }
 

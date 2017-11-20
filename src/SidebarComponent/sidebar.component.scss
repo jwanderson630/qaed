@@ -8,7 +8,16 @@ a {
 	text-decoration: none;
 }
 
-.sidebar {
+.spacer {
+	transition: width .4s ease;
+	width: 75px;
+	height: 100%;
+	&.expand {
+		width: 350px;
+	}
+}
+
+#sidebar {
 	width: 75px;
 	height: 100vh;
 	background-color: $main;
@@ -17,6 +26,9 @@ a {
 	position: relative;
 	z-index: 1000;
 	flex-shrink: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
 	&.expand {
 		width: 350px;
 		.side-navs {

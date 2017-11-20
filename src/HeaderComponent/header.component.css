@@ -1,0 +1,17 @@
+.header-container {
+  overflow: hidden; }
+
+.header {
+  padding: 20px;
+  font-size: 5rem;
+  color: #304357;
+  font-weight: bold;
+  height: 75px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  margin: 0;
+  width: 100%; }
+
+/*# sourceMappingURL=header.component.css.map */

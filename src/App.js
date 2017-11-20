@@ -3,7 +3,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import SidebarComponent from './SidebarComponent/sidebar.component.js';
-import EmailWorkspaceComponent from './EmailWorkspaceComponent/email-workspace.component.js';
+import WorkspaceComponent from './WorkspaceComponent/workspace.component.js';
+import HeaderComponent from './HeaderComponent/header.component.js';
 
 import {
   Route,
@@ -17,11 +18,15 @@ class App extends Component {
     return (
         <Router>
           <div id="app">
-            <SidebarComponent/>
-            <Route exact path="/email/:activeTab" component={EmailWorkspaceComponent}/>
+            <div className="sidebar">
+              <SidebarComponent />
+            </div>
+            <div className="main">
+              <Route path="/:header" component={ HeaderComponent } />
+              <WorkspaceComponent />
+            </div>
           </div>
         </Router>
-      
     );
   }
 }

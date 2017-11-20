@@ -4,5 +4,7 @@ html, body {
 
 #app {
   display: flex; }
+  #app .main {
+    flex: 5 5 100%; }
 
 /*# sourceMappingURL=App.css.map */

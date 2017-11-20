@@ -1,0 +1,21 @@
+$main: #304357;
+$main-lt: #6DBCDB;
+$accent: #FF201D;
+$grey: #D7DADB;
+
+.header-container {
+	overflow: hidden;
+}
+.header {
+	padding: 20px;
+	font-size: 5rem;
+	color: $main;
+	font-weight: bold;
+	height: 75px;
+	background-color: white;
+	display: flex;
+	align-items: center;
+	padding: 0 20px;
+	margin: 0;
+	width: 100%;
+}
