@@ -194,6 +194,9 @@ a {
 					visibility: visible;
 				}
 			}
+			a.active {
+				background-color: lighten($main,10)
+			}
 		}
 
 	}

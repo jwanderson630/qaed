@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './header.component.css';
+import ClassNames from 'classnames';
 
 class HeaderComponent extends Component {
 
@@ -8,30 +9,50 @@ class HeaderComponent extends Component {
 		this.state = {
 			headerHeight: '75px',
 			headerOpacity: 1,
+			currentHeader: '',
+			animate: false
 		}
 	}
 
 	render() {
 		return (
 			<div className="header-container" style={{maxHeight: this.state.headerHeight}}>
-				<h1 className="header">{this.props.match.params.header[0].toUpperCase() + this.props.match.params.header.substr(1)}</h1>
+				<h1 className={ClassNames("header")} style={{opacity: this.state.headerOpacity}}><span className={ClassNames("header-text", {"animate": this.state.animate})}>{this.state.currentHeader}</span></h1>
 			</div>
 		)
 	}
 
 	componentDidMount() {
-		window.addEventListener('scroll', this.getHeight.bind(this));
-	}
-
-	getHeight() {
 		this.setState({
-			headerHeight: 75 - window.scrollY >= 0 ? 75 - window.scrollY + "px": 0,
-			headerOpacity: 75 - window.scrollY >= 0 ? 75 / window.scrollY: 0,
-		});
+			currentHeader: this.fixHeader(this.props.match.params.header)
+		})
 	}
 
-	componentWillUnmount() {
-		window.removeEventListener('scroll');
+	fixHeader(header) {
+		return header[0].toUpperCase() + header.substr(1)
+	}
+
+	animateHeader(newHeader) {
+		this.setState({
+			animate: true
+		})
+		window.setTimeout(() => {
+			this.setState({
+				currentHeader: this.fixHeader(newHeader)
+			})
+		}, 350);
+		window.setTimeout(() => {
+			this.setState({
+				animate: false
+			})
+		}, 700);
+	}
+
+	componentWillReceiveProps(newProps) {
+		if (newProps.match.params.header !== this.props.match.params.header) {
+			this.animateHeader(newProps.match.params.header);
+		}
+	
 	}
 
 

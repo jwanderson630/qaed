@@ -152,5 +152,7 @@ a {
       #sidebar .side-navs .s-nav:hover .s-label {
         opacity: 1;
         visibility: visible; }
+      #sidebar .side-navs .s-nav a.active {
+        background-color: #425c78; }
 
 /*# sourceMappingURL=sidebar.component.css.map */

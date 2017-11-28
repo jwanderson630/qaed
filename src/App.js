@@ -23,7 +23,7 @@ class App extends Component {
             </div>
             <div className="main">
               <Route path="/:header" component={ HeaderComponent } />
-              <WorkspaceComponent />
+              <WorkspaceComponent path="/workspace" />
             </div>
           </div>
         </Router>

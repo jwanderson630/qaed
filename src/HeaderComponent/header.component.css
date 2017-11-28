@@ -1,5 +1,6 @@
 .header-container {
-  overflow: hidden; }
+  overflow: hidden;
+  background-color: white; }
 
 .header {
   padding: 20px;
@@ -13,5 +14,21 @@
   padding: 0 20px;
   margin: 0;
   width: 100%; }
+  .header .header-text.animate {
+    animation: HeaderTransition .6s 1 ease; }
+
+@keyframes HeaderTransition {
+  0% {
+    transform: translateY(0);
+    opacity: 1; }
+  50% {
+    transform: translateY(-75px);
+    opacity: 0; }
+  50.1% {
+    transform: translateY(75px);
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
 
 /*# sourceMappingURL=header.component.css.map */

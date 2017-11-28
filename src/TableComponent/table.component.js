@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './table.component.css';
 import ClassNames from 'classnames';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 class TableComponent extends Component {
 
@@ -24,7 +24,7 @@ class TableComponent extends Component {
 	getTabs() {
 		return this.props.tabs.map((tab) => {
 			return ( 
-				<Link to={"./" + tab.toLowerCase()}>
+				<Link to={this.props.path + tab.toLowerCase()}>
 					<div className={ClassNames('t-tab', {'active': tab.toLowerCase() === this.props.activeTab.toLowerCase()})}>{tab}</div>
 				</Link>
 			);

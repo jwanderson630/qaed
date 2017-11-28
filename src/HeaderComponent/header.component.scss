@@ -5,6 +5,7 @@ $grey: #D7DADB;
 
 .header-container {
 	overflow: hidden;
+	background-color: white;
 }
 .header {
 	padding: 20px;
@@ -18,4 +19,28 @@ $grey: #D7DADB;
 	padding: 0 20px;
 	margin: 0;
 	width: 100%;
+	.header-text{
+		&.animate {
+			animation: HeaderTransition .6s 1 ease;
+		}
+	}
+}
+
+@keyframes HeaderTransition {
+	0% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+	50% {
+		transform: translateY(-75px);
+		opacity: 0;
+	}
+	50.1% {
+		transform: translateY(75px);
+		opacity: 0
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
 }
