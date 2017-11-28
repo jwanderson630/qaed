@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "",
-"sources": [],
+"mappings": "AAAA,gBAAiB;EAChB,OAAO,EAAE,IAAI",
+"sources": ["client-workspace.component.scss"],
 "names": [],
 "file": "client-workspace.component.css"
 }

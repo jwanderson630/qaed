@@ -1,6 +1,7 @@
 html, body {
   font-size: 10px;
-  background-color: #f3f3f3; }
+  background-color: #f3f3f3;
+  color: #242729; }
 
 #app {
   display: flex; }

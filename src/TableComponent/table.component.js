@@ -5,6 +5,18 @@ import { Link, Redirect } from 'react-router-dom';
 
 class TableComponent extends Component {
 
+	constructor() {
+		super();
+		this.state = {
+			activeTab : '',
+		};
+	}
+
+	componentDidMount() {
+		this.setState({
+			activeTab: this.props.tabs[0],
+		});
+	}
 
 	render() {
 		return (
@@ -12,8 +24,13 @@ class TableComponent extends Component {
 				<div className="t-tabs">
 					{this.getTabs()}
 				</div>
+				<div className="t-border">
+					<div className="t-indicator" style={{
+						left: this.props.tabs.indexOf(this.state.activeTab) * 151 + "px"}}>
+					</div>
+				</div>
 				<div className="t-content">
-					<table>
+					<table className="t-table">
 						{this.makeTable()}
 					</table>
 				</div>
@@ -21,12 +38,16 @@ class TableComponent extends Component {
 		)
 	}
 
+	tabClick(tab) {
+		this.setState({
+			activeTab: tab,
+		});
+	};
+
 	getTabs() {
-		return this.props.tabs.map((tab) => {
+		return this.props.tabs.map((tab, i) => {
 			return ( 
-				<Link to={this.props.path + tab.toLowerCase()}>
-					<div className={ClassNames('t-tab', {'active': tab.toLowerCase() === this.props.activeTab.toLowerCase()})}>{tab}</div>
-				</Link>
+				<div key={tab + i} className={ClassNames('t-tab', {'active': tab === this.state.activeTab})} onClick={() => this.tabClick(tab)}>{tab}</div>
 			);
 		});
 	}
@@ -35,19 +56,19 @@ class TableComponent extends Component {
 		return (
 			<tbody>
 			<tr className="t-headers">
-				{this.props.data.headers.map((header) => {
+				{this.props.data.headers.map((header, i) => {
 					return (
-						<td className="t-header">{header}</td>
+						<td key={header + i} className="t-header">{header}</td>
 					)
 				})}
 			</tr>
-				{this.props.data.projects.map((project) => {
+				{this.props.data.projects.map((project, i) => {
 					return (
-						<tr className="t-row">
+						<tr key={project + i} className="t-row">
 							{
-								this.props.data.headers.map((col) => {
+								this.props.data.headers.map((col, i) => {
 									return (
-										<td className="t-cell">
+										<td key={col + i} className="t-cell">
 											{project[col]}
 										</td>
 									)

@@ -40,12 +40,12 @@ class HeaderComponent extends Component {
 			this.setState({
 				currentHeader: this.fixHeader(newHeader)
 			})
-		}, 350);
+		}, 250);
 		window.setTimeout(() => {
 			this.setState({
 				animate: false
 			})
-		}, 700);
+		}, 500);
 	}
 
 	componentWillReceiveProps(newProps) {

@@ -2,8 +2,7 @@ a {
   text-decoration: none; }
 
 .table {
-  border-radius: 2px;
-  animation: TableAnimation .6s 1 ease; }
+  border-radius: 2px; }
   .table .t-tabs {
     display: flex;
     align-items: flex-end;
@@ -21,33 +20,53 @@ a {
       position: relative;
       border-radius: 2px 2px 0 0;
       margin-right: 1px;
-      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2); }
+      box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+      cursor: pointer; }
+      .table .t-tabs .t-tab:hover {
+        height: 55px;
+        background-color: white;
+        box-shadow: 0 0 3px 2px rgba(0, 0, 0, 0.2);
+        z-index: 6; }
       .table .t-tabs .t-tab.active {
         background-color: white;
         height: 60px;
         font-weight: bold;
         z-index: 10;
         box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); }
+  .table .t-border {
+    height: 5px;
+    width: 100%;
+    position: relative;
+    z-index: 11;
+    background-color: #91a9c2;
+    border-radius: 0 4px 0 0; }
+    .table .t-border .t-indicator {
+      background-color: #304357;
+      height: 5px;
+      width: 150px;
+      position: relative;
+      transition: left 0.2s ease; }
   .table .t-content {
-    border-top: 5px solid #304357;
     position: relative;
     z-index: 5;
     padding: 15px;
     background-color: white;
-    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 -2px 5px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 4px 4px; }
+    .table .t-content .t-table {
+      width: 100%; }
     .table .t-content .t-headers {
       border-bottom: 1px solid #D7DADB; }
       .table .t-content .t-headers .t-header {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
         font-weight: bold;
-        margin-right: 10px; }
-
-@keyframes TableAnimation {
-  0% {
-    opacity: 0;
-    transform: translateY(200px); }
-  100% {
-    opacity: 1;
-    transform: translateY(0); } }
+        margin-right: 10px;
+        padding: 5px; }
+    .table .t-content .t-row {
+      font-size: 1.3rem; }
+      .table .t-content .t-row:nth-child(2n) {
+        background-color: #eceeee; }
+      .table .t-content .t-row .t-cell {
+        padding: 5px; }
 
 /*# sourceMappingURL=table.component.css.map */

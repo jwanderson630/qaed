@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import TableComponent from '../TableComponent/table.component.js';
 import './client-workspace.component.css';
 import { Redirect } from 'react-router-dom';
+import SlideInTransition from '../Transitions/SlideInTransition/slide-in.transition.js';
+import { TransitionGroup } from 'react-transition-group';
 
 class ClientWorkspaceComponent extends Component {
 
@@ -11,30 +13,34 @@ class ClientWorkspaceComponent extends Component {
 		super();
 		this.state = {
 			showTable: false
-		}
+		};
 	}
 
 	render(){
 		return (
 			<div id="clientWorkspace">
-				<Redirect to="/clients/active"/>
-				<TableComponent
-				 tabs={['Active', 'Templates', 'Archived']} 
-				 activeTab={this.props.match.params.activeTab || 'Active'}
-				 data={ {
-					headers: ['Project Name', 'Client', 'Last Modified'],
-					projects: [
-						{
-							'Project Name': 'Project 1',
-							'Client': 'Client 1',
-							'Last Modified': Date.now()
-						},
-						{
-							'Project Name': 'Project 2',
-							'Client': 'Client 2',
-							'Last Modified': Date.now()
-						}
-					]}}/>
+				<TransitionGroup>
+					<SlideInTransition>
+						<TableComponent
+							tabs={['Active', 'Templates', 'Archived']}
+							data={ {
+								headers: ['Project Name', 'Client', 'Last Modified'],
+								projects: [
+									{
+										'Project Name': 'Project 1',
+										'Client': 'Client 1',
+										'Last Modified': Date.now()
+									},
+									{
+										'Project Name': 'Project 2',
+										'Client': 'Client 2',
+										'Last Modified': Date.now()
+									}
+								]
+							}
+						}/>
+					</SlideInTransition>
+				</TransitionGroup>
 			</div>
 		)
 	}

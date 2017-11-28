@@ -1,32 +1,28 @@
-#emailWorkspace {
-  transition: opacity .2s ease;
-  padding: 30px; }
-
-.space-appear {
+.slide-in-appear {
   opacity: 0;
   transform: translateY(200px);
   transition: opacity 0.4s ease, transform 0.4s ease; }
 
-.space-appear.space-appear-active {
+.slide-in-appear.slide-in-appear-active {
   opacity: 1;
   transform: translateY(0); }
 
-.space-enter {
+.slide-in-enter {
   opacity: 0;
   transform: translateY(200px);
   transition: opacity 0.4s ease, transform 0.4s ease; }
 
-.space-enter.space-enter-active {
+.slide-in-enter.slide-in-enter-active {
   opacity: 1;
   transform: translateY(0); }
 
-.space-exit {
+.slide-in-exit {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease; }
 
-.space-exit.space-exit-active {
+.slide-in-exit.slide-in-exit-active {
   opacity: 0;
   transform: translateY(200px); }
 
-/*# sourceMappingURL=email-workspace.component.css.map */
+/*# sourceMappingURL=slide-in.transition.css.map */

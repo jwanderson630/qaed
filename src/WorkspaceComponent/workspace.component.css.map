@@ -1,6 +1,6 @@
 {
 "version": 3,
-"mappings": "AAAA,UAAW;EACV,OAAO,EAAE,SAAS;EAClB,UAAU,EAAC,8BAA0B;EACrC,UAAU,EAAE,mBAAmB",
+"mappings": "AAAA,UAAW;EACV,UAAU,EAAE,WAAW",
 "sources": ["workspace.component.scss"],
 "names": [],
 "file": "workspace.component.css"

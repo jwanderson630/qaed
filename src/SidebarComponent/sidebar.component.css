@@ -2,7 +2,7 @@ a {
   text-decoration: none; }
 
 .spacer {
-  transition: width .4s ease;
+  transition: width .3s ease;
   width: 75px;
   height: 100%; }
   .spacer.expand {
@@ -13,7 +13,7 @@ a {
   height: 100vh;
   background-color: #304357;
   box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.3);
-  transition: width .4s ease;
+  transition: width .3s ease;
   position: relative;
   z-index: 1000;
   flex-shrink: 0;
@@ -54,7 +54,7 @@ a {
     flex-direction: column;
     height: 100vh; }
     #sidebar .side-navs .toggle {
-      transition: background-color .4s ease;
+      transition: background-color .3s ease;
       padding: 0;
       margin: 0 0 10px 0;
       width: 100%;
@@ -97,7 +97,7 @@ a {
       justify-content: flex-start;
       overflow: hidden; }
       #sidebar .side-navs .s-nav .s-btn {
-        transition: box-shadow .4s ease, background-color .4s ease, max-width .3s ease;
+        transition: box-shadow .3s ease, background-color .3s ease, max-width .3s ease;
         flex: 1 1 26px;
         padding: 0 13px;
         height: 50px;
@@ -121,7 +121,7 @@ a {
           overflow: hidden;
           white-space: nowrap; }
         #sidebar .side-navs .s-nav .s-btn .btn-drop {
-          transition: max-width .25s ease, opacity .25s ease, flex .25s ease, border-left .25s ease, background-color .4s ease, max-width .25s ease;
+          transition: max-width .25s ease, opacity .25s ease, flex .25s ease, border-left .25s ease, background-color .3s ease, max-width .25s ease;
           border-left: none;
           flex: 0 5 24px;
           max-width: 0;
